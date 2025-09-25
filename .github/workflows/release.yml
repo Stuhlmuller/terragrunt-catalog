@@ -6,6 +6,7 @@ on:
     branches:
       - main
     paths:
+      - 'modules/**'
       - 'units/**'
       - 'stacks/**'
 
@@ -27,7 +28,7 @@ jobs:
         id: changes
         run: |
           # Get changed directories
-          CHANGED_PATHS=$(git diff --name-only $(git describe --tags --abbrev=0) HEAD -- stacks units)
+          CHANGED_PATHS=$(git diff --name-only $(git describe --tags --abbrev=0) HEAD -- stacks units modules)
 
           # Extract unique top-level directories (e.g., stacks/foo/bar or units/foo/bar)
           DIRS=$(echo "$CHANGED_PATHS" | xargs -I {} dirname "{}" | sort -u)
