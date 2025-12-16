@@ -8,6 +8,13 @@ include "root" {
   path = find_in_parent_folders("root.hcl")
 }
 
+dependency "kubernetes_namespace" {
+  config_path = values.namespace_config_path
+  mock_outputs = {
+    namespace = "namespace-name"
+  }
+}
+
 inputs = {
   # --------------------------------------------------------------------------------------------------------------------
   # Required input variables
@@ -19,7 +26,7 @@ inputs = {
 
   # Description: (variable namespace did not define a description)
   # Type: string
-  namespace = values.namespace # TODO: fill in value
+  namespace = dependency.kubernetes_namespace.outputs.name # TODO: fill in value
 
   # Description: (variable repo_url did not define a description)
   # Type: string

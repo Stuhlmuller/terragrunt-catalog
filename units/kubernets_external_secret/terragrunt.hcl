@@ -8,6 +8,13 @@ include "root" {
   path = find_in_parent_folders("root.hcl")
 }
 
+dependency "kubernetes_namespace" {
+  config_path = values.namespace_config_path
+  mock_outputs = {
+    namespace = "namespace-name"
+  }
+}
+
 inputs = {
   # --------------------------------------------------------------------------------------------------------------------
   # Required input variables
@@ -19,7 +26,7 @@ inputs = {
 
   # Description: The namespace to create the secrets in
   # Type: string
-  namespace = values.namespace # TODO: fill in value
+  namespace = dependency.kubernetes_namespace.outputs.name # TODO: fill in value
 
   # Description: The name of the secret
   # Type: string
