@@ -8,6 +8,11 @@ variable "labels" {
   default = {}
 }
 
+variable "name" {
+  type        = string
+  description = "The name of the argocd application"
+}
+
 variable "namespace" {
   type = string
 }

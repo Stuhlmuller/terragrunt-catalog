@@ -1,12 +1,7 @@
-resource "kubernetes_namespace" "namespace" {
+resource "argocd_application" "app" {
   metadata {
-    name = var.namespace
-  }
-}
-
-resource "argocd_application" "open_webui" {
-  metadata {
-    name        = kubernetes_namespace.namespace.metadata.name
+    name        = var.name
+    namespace   = var.namespace
     annotations = var.annotations
     labels = merge(
       local.tags,
