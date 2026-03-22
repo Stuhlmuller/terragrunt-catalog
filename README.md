@@ -330,7 +330,3 @@ When adding new modules or units:
 - [OpenTofu Encryption](https://opentofu.org/docs/language/state/encryption/)
 - [AWS KMS Documentation](https://docs.aws.amazon.com/kms/)
 - [Terragrunt Documentation](https://terragrunt.gruntwork.io/docs/)
-
-## License
-
-See LICENSE file for details.
