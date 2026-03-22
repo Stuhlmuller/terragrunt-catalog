@@ -1,0 +1,44 @@
+# Terraform / OpenTofu files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+**/.terraform/*
+**/.terraform.lock.hcl
+.terraformrc
+terraform.rc
+
+# Terragrunt files
+**/.terragrunt-cache/*
+.terragrunt-cache/
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Sensitive data
+*.pem
+*.key
+secrets/
+.env
+.env.*
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Plan files (may contain sensitive data)
+*.tfplan
+*.plan
+
+# Lock files
+.terraform.lock.hcl
