@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "mcp__terraform_*",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "mcp__terraform__get_latest_provider_version",
+      "mcp__terraform__search_providers",
+      "mcp__terraform__get_provider_details"
     ]
   }
 }
