@@ -13,6 +13,6 @@ on:
 
 jobs:
   check:
-    uses: rstuhlmuller/workflows/.github/workflows/default.yml@main
+    uses: Stuhlmuller/workflows/.github/workflows/default.yml@main
     with:
       checkov: false
