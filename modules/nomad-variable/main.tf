@@ -34,4 +34,8 @@ resource "nomad_variable" "this" {
   path      = var.path
   namespace = var.namespace
   items     = var.items
+
+  lifecycle {
+    ignore_changes = [items]
+  }
 }
