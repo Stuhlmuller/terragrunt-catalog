@@ -12,6 +12,7 @@ terraform {
     key_provider "aws_kms" "main" {
       kms_key_id = var.kms_key_id
       key_spec   = "AES_256"
+      region     = "us-west-2"
     }
 
     method "aes_gcm" "main" {
